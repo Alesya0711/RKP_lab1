@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый студент</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; display: inline-block; }
+        form { max-width: 450px; margin-top: 20px; }
+        p { margin-bottom: 15px; }
+        label { display: inline-block; width: 180px; font-weight: bold; }
+        input[type="text"], input[type="number"], input[type="email"] {
+            width: 220px; padding: 6px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 8px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; margin-right: 10px;
+        }
+        input[type="submit"] { background-color: #27ae60; color: white; }
+        input[type="submit"]:hover { background-color: #219150; }
+        input[type="reset"] { background-color: #95a5a6; color: white; }
+        input[type="reset"]:hover { background-color: #7f8c8d; }
+    </style>
+</head>
+<body>
+<h1>Форма информации о студенте</h1>
+
+<form action="#" th:action="@{/form}" th:object="${student}" method="post">
+    <p>
+        <label for="id">Id:</label>
+        <input type="number" id="id" th:field="*{id}" required />
+    </p>
+    <p>
+        <label for="surname">Фамилия:</label>
+        <input type="text" id="surname" th:field="*{surname}" placeholder="Введите фамилию" required />
+    </p>
+    <p>
+        <label for="name">Имя студента:</label>
+        <input type="text" id="name" th:field="*{name}" placeholder="Введите имя" required />
+    </p>
+    <p>
+        <label for="patronymic">Отчество:</label>
+        <input type="text" id="patronymic" th:field="*{patronymic}" placeholder="Введите отчество" />
+    </p>
+    <p>
+        <label for="email">Адрес e-mail:</label>
+        <input type="email" id="email" th:field="*{email}" placeholder="example@mail.ru" required />
+    </p>
+    <p>
+        <label for="enrollmentYear">Год поступления:</label>
+        <input type="number" id="enrollmentYear" th:field="*{enrollmentYear}" placeholder="Например, 2020" required />
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+        <input type="reset" value="Сброс" />
+    </p>
+</form>
+</body>
+</html>
