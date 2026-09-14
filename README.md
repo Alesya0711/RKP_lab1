@@ -45,8 +45,3 @@
 
 Страница с обработанными данными
 <img width="610" height="604" alt="image" src="https://github.com/user-attachments/assets/1d9acdf8-d332-41e1-b167-019d019e4722" />
-
-
-*Добавьте скриншоты:*
-- Страница формы ввода данных (`main-form.html`)
-- Страница отображения результата (`result.html`)
